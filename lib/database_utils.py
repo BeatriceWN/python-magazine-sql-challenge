@@ -30,3 +30,16 @@ def create_table():
     )               
     """)
     
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS articles(
+        id INTEGER PRIMARY AUTOINCREMENT
+        title TEXT NOT NULL
+        author_id INTEGER NOT NULL
+        magazine_id NOT NULL
+        FOREIGN KEY(author_id) REFERENCES authors(id) 
+        FOREIGN KEY (magazine_id) REFERENCES magazines(id)
+    )         
+    """)
+    conn.commit()
+    conn.close()
+    
