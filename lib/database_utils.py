@@ -22,3 +22,11 @@ def create_table():
                    
     """)
     
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS magazines(
+        id INTEGER PRIMARY AUTOINCREMENT
+        name TEXT NOT NULL
+        category TEXT NOT NULL
+    )               
+    """)
+    
