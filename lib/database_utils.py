@@ -14,3 +14,11 @@ def create_table():
     conn = get_connection()
     cursor = conn.cursor()
     
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS author(
+        id INTEGER PRIMARY KEY AUTOINCREMENT
+        name TEXT NOT NULL
+    )               
+                   
+    """)
+    
